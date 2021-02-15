@@ -1,23 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using RPG.Movement;
 using RPG.Combat;
-using System;
+using RPG.Core;
+using RPG.Resources;
 
 namespace RPG.Control
 {
-    
+
     public class PlayerController : MonoBehaviour
     {
         bool nowhereToClick;
+        Health health;
+        private void Start()
+        {
+            health = GetComponent<Health>();
+        }
         private void Update()
         {
+            if (health.IsDead()) return;
+
             if (InteractWithCombat())
                 return;
             if (InteractWithMovement())
                 return;
-            Debug.Log("Inrasir");
             
         }
 
@@ -26,12 +31,14 @@ namespace RPG.Control
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
             foreach(RaycastHit hit in hits)
             {
-                CombatTarget combatTarget = hit.transform.GetComponent<CombatTarget>();
-                if (combatTarget == null)
+                CombatTarget target = hit.transform.GetComponent<CombatTarget>();
+                if (target == null) continue;
+
+                if (!GetComponent<Fighter>().CanAttack(target.gameObject))
                     continue;
 
                 if(Input.GetMouseButtonDown(0))
-                    GetComponent<Fighter>().Attack(combatTarget);
+                    GetComponent<Fighter>().Attack(target.gameObject);
 
                 return true;
             }
@@ -45,8 +52,8 @@ namespace RPG.Control
 
             if (hasHit)
             {
-                if (Input.GetMouseButton(0))
-                    GetComponent<Mover>().MoveTo(hit.point);
+                if (Input.GetMouseButtonDown(0))
+                    GetComponent<Mover>().StartMoveAction(hit.point,1f);
 
                 return true;
             }

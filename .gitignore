@@ -338,3 +338,7 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/Library/EditorInstance.json
+/Temp/UnityTempFile-693b4e82745e5ac4c8c4dea78e8d3db5
+/Temp/UnityTempFile-2e1b3306525fc8a43935195f485c06ae
+/Temp/UnityTempFile-617942c31d616944aa9bc261ac8e9f0c
