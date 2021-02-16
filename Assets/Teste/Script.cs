@@ -1,31 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class Script : MonoBehaviour
 {
-    private bool isGameOver = false;
-    public bool IsGameOver
+    public Dictionary<int, int> numbers = new Dictionary<int,int>();
+
+    private void Start()
     {
-        get
+        /*numbers.Add(0, 0);
+        Debug.Log(numbers[0]);
+        numbers.Add(500, 240);
+        Debug.Log(numbers[500]);
+        */
+        foreach  (var number in numbers)
         {
-            return isGameOver;
-        }
-        set
-        {
-            isGameOver = value;
+            Debug.Log(number);
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log(IsGameOver);
-            Debug.Log(isGameOver);
-            IsGameOver = !isGameOver;
-        }
-    }
-
 }

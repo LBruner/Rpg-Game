@@ -8,7 +8,5 @@ public class Sphere : MonoBehaviour
 
     private void Start()
     {
-        script = new Script();
-        script.IsGameOver = false;
     }
 }
