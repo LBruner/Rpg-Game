@@ -7,7 +7,7 @@ namespace RPG.SceneManagement
 {
     public class Fader : MonoBehaviour
     {
-        CanvasGroup canvasGroup;
+        [SerializeField]CanvasGroup canvasGroup;
 
         private void Start()
         {
@@ -16,7 +16,8 @@ namespace RPG.SceneManagement
 
         public void FadeOutImmidiate()
         {
-            canvasGroup.alpha = 1;
+            if(canvasGroup != null)
+                canvasGroup.alpha = 1;
         }
         public IEnumerator FadeOut(float time)
         {

@@ -14,6 +14,19 @@ CapsuleCollider:
   m_Height: 2.45
   m_Direction: 1
   m_Center: {x: 0, y: 0.8099108, z: 0}
+--- !u!114 &4873084522956562338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012393286010802106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c867984462c0245a634abf8eaaf929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experiencePoints: 0
 --- !u!114 &4958507114826879770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26,6 +39,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6222eb38ec15844a56032cef80fc50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorMappings:
+  - type: 3
+    texture: {fileID: 2800000, guid: 7ec1dbfa4ac227442ae8e6e238233e41, type: 3}
+    hotspot: {x: 0, y: 0}
+  - type: 0
+    texture: {fileID: 2800000, guid: e43eb6dc9e9ce1f47bac91c53a5246fc, type: 3}
+    hotspot: {x: 0, y: 0}
+  - type: 2
+    texture: {fileID: 2800000, guid: 78bdc1d51cd53a648ac0c56ff5aaf59f, type: 3}
+    hotspot: {x: 0, y: 0}
+  - type: 1
+    texture: {fileID: 2800000, guid: 9cda48e378d35dc4ab62c87729c084dd, type: 3}
+    hotspot: {x: 0, y: 0}
 --- !u!114 &5581209381024916478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a03b07cc32fe4b4dbcc69635982ee78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 100
+  regenerationPercentage: 70
 --- !u!114 &7565390432322926278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,6 +80,8 @@ MonoBehaviour:
   startingLevel: 1
   characterClass: 0
   progression: {fileID: 11400000, guid: 549055244ef96c040ad6ea9a7b029e61, type: 2}
+  levelUpParticles: {fileID: 1970853088899914106, guid: 0de3ace73e3ab3b408e010cc4fc3c8b0,
+    type: 3}
 --- !u!114 &8307232170159933549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,19 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueIdentifier: player
---- !u!114 &4873084522956562338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6012393286010802106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c867984462c0245a634abf8eaaf929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  experiencePoints: 0
 --- !u!1001 &352781694193906267
 PrefabInstance:
   m_ObjectHideFlags: 0
